@@ -4,12 +4,12 @@ import TopLinks from "./TopLink";
 export default function Home() {
   return (
     <>
-      <div className="relative w-200 md:w-full h-137.5">
+      <div className="relative w-200 md:w-full h-137.5   mb-96">
 
         {/* Hero Image */}
 
         <Image
-          src="/hero2.webp"
+          src="/hero3.webp"
           alt="Turkish Airlines"
           fill
           priority
@@ -34,12 +34,17 @@ export default function Home() {
 
             <div  >
               <TopLinks href="#" icon="/turkishairlines.svg" iconWidth={190} iconHeight={30} className="ml-5 hidden md:block " />
-              <button className="md:hidden flex flex-col gap-1 ml-5">
+              <div className="flex items-center md:hidden">
 
-                <span className="w-6 h-0.5 bg-white"></span>
-                <span className="w-6 h-0.5 bg-white"></span>
-                <span className="w-6 h-0.5 bg-white"></span>
-              </button>
+                <Image src="/logo.svg" alt="" width={40} height={40} className="ml-3" />
+                <button className=" flex flex-col gap-1 ml-5">
+
+                  <span className="w-7 h-0.75 bg-white"></span>
+                  <span className="w-7 h-0.75 bg-white"></span>
+                  <span className="w-7 h-0.75 bg-white"></span>
+                </button>
+              </div>
+
             </div>
 
             <div className="ml-auto flex items-center text-xs gap-5 font-black text-white ">
