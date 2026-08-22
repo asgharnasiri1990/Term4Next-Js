@@ -9,7 +9,7 @@ export default function Home() {
         {/* Hero Image */}
 
         <Image
-          src="/hero3.webp"
+          src="/hero.webp"
           alt="Turkish Airlines"
           fill
           priority
@@ -38,7 +38,6 @@ export default function Home() {
 
                 <Image src="/logo.svg" alt="" width={40} height={40} className="ml-3" />
                 <button className=" flex flex-col gap-1 ml-5">
-
                   <span className="w-7 h-0.75 bg-white"></span>
                   <span className="w-7 h-0.75 bg-white"></span>
                   <span className="w-7 h-0.75 bg-white"></span>
@@ -48,6 +47,7 @@ export default function Home() {
             </div>
 
             <div className="ml-auto flex items-center text-xs gap-5 font-black text-white ">
+
               <TopLinks href="#" title="BOOK&MANAGE" className="hover:bg-amber-300gre hidden md:flex" />
               <TopLinks href="#" title=" EXPERIENCE " className=" hidden md:flex" />
               <TopLinks href="#" title=" DETAILS&DESTINATIONS " className=" hidden md:flex" />
@@ -64,11 +64,29 @@ export default function Home() {
 
 
 
+
           </nav>
+
 
         </header>
 
+        <div className="absolute top-40 md:top-55 left-1/2 -translate-x-1/2 md:-translate-y-1/2 w-[85%] md:h-36 md:w-248 flex flex-col gap-2 text-white text-center md:text-left">
+          <span className="text-2xl md:text-4xl font-medium hidden md:block">
+            Earn as you spend with TKPAY Card
+          </span>
+          <span className="md:hidden font-bold">TKPAY Card Offers</span>
+          <span className="text-base md:text-xl">
+            Earn up to 3% TK Money on your spending in Türkiye and up to 5% abroad
+          </span>
+          <button className="md:bg-[#7E2E2E] h-13 w-56 mx-auto md:mx-0 font-bold md:font-semibold md:border cursor-pointer">
+            Discover the privileges
+          </button>
+        </div>
+
       </div>
+
+
+
     </>
   );
 }
