@@ -1,20 +1,22 @@
 import Image from "next/image";
 import TopLinks from "./TopLink";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <>
-      <div className="relative w-200 md:w-full h-137.5   mb-96">
+      <div className="relative w-auto  md:w-full md:h-137.5  h-82  mb-96">
 
         {/* Hero Image */}
 
         <Image
-          src="/hero.webp"
+          src="/hero3.webp"
           alt="Turkish Airlines"
           fill
           priority
-          className="object-cover"
+          className="object-cover h-60"
         />
+        <div className="absolute inset-0 bg-black/30" />
 
         {/* Overlay / Header */}
         <header className="absolute top-0 left-0 w-full">
@@ -70,21 +72,23 @@ export default function Home() {
 
         </header>
 
-        <div className="absolute top-40 md:top-55 left-1/2 -translate-x-1/2 md:-translate-y-1/2 w-[85%] md:h-36 md:w-248 flex flex-col gap-2 text-white text-center md:text-left">
-          <span className="text-2xl md:text-4xl font-medium hidden md:block">
-            Earn as you spend with TKPAY Card
+        <div className="absolute  top-20 ml-2  md:top-38  md:h-42 md:w-220 md:left-1/2 md:-translate-x-1/2 flex flex-col gap-2 text-white text-left ">
+          <Link rel="stylesheet" href="#" className="text-xl md:text-[38px] font-xs hidden md:block">
+            Choose your destination before summer ends
+          </Link>
+          <span className="md:hidden font-bold text-[28px]">Extend you summer now</span>
+          <span className="block whitespace-nowrap overflow-hidden text-md md:text-[19px]">
+
+            Enjoy Turkish Airlines privileges and make the most of your vacation before the season ends
           </span>
-          <span className="md:hidden font-bold">TKPAY Card Offers</span>
-          <span className="text-base md:text-xl">
-            Earn up to 3% TK Money on your spending in Türkiye and up to 5% abroad
-          </span>
-          <button className="md:bg-[#7E2E2E] h-13 w-56 mx-auto md:mx-0 font-bold md:font-semibold md:border cursor-pointer">
-            Discover the privileges
+          <button className="md:backdrop-blur-2xl h-12.75 w-32.5 md:mx-0 font-semi-bold  md:font-semibold text-[14px]  md:border rounded cursor-pointer hidden md:block">
+            BOOK NOW
           </button>
+          <Link rel="stylesheet" href="#" className="text-[16px] font-semibold md:hidden" >BOOK NOW 	&gt; </Link>
+
         </div>
 
       </div>
-
 
 
     </>
