@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-      <div className="relative w-auto  md:w-full md:h-137.5  h-82  mb-96">
+      <div className="relative   w-auto md:h-137.5 md:w-full  h-82  mb-96">
 
         {/* Hero Image */}
 
@@ -72,12 +72,12 @@ export default function Home() {
 
         </header>
 
-        <div className="absolute  top-20 ml-2  md:top-38  md:h-42 md:w-220 md:left-1/2 md:-translate-x-1/2 flex flex-col gap-2 text-white text-left ">
+       <div className="absolute top-20 ml-2 md:top-38 md:h-42 w-[90%] md:w-[80%] max-w-220 md:left-1/2 md:-translate-x-1/2 flex flex-col gap-2 text-white text-left">
           <Link rel="stylesheet" href="#" className="text-xl md:text-[38px] font-xs hidden md:block">
             Choose your destination before summer ends
           </Link>
           <span className="md:hidden font-bold text-[28px]">Extend you summer now</span>
-          <span className="block whitespace-nowrap overflow-hidden text-md md:text-[19px]">
+          <span className="text-md md:text-[19px]">
 
             Enjoy Turkish Airlines privileges and make the most of your vacation before the season ends
           </span>
