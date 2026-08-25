@@ -17,7 +17,7 @@ function TopLinks({
     className = "",
     iconWidth = 10,
     iconHeight = 10,
-    }: TopLinkProps) {
+}: TopLinkProps) {
     return (
         <Link className={`hover:text-blue-300 flex gap-2 ${className}`} href={href}>
             {icon && <Image src={icon} alt={title ?? ""} width={iconWidth} height={iconHeight} />}
