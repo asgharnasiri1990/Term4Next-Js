@@ -92,38 +92,38 @@ export default function Home() {
 
        
         {/* Mobile Booker Section - Invisible in Desktop */}
-        <section className="absolute left-1/2 -translate-x-1/2 top-82 bg-amber-300 h-76 w-[80%] max-w-174 md:hidden flex flex-col justify-center rounded">
+        <section className="absolute left-1/2 -translate-x-1/2 top-82 bg-amber-300 h-70 w-[90%] max-w-174 md:hidden flex flex-col justify-center rounded">
 
           <Tabs defaultValue="flight" className="flex  gap-1 w-full ">
-            <TabsList className="h-82! flex flex-col items-baseline gap-1 w-full bg-transparent ">
+            <TabsList className="relative -top-3 h-82! flex flex-col items-baseline gap-1 w-full bg-transparent ">
 
               {/*FLIGHT*/}
-              <TabsTrigger value="flight" className="flex -top-2  items-center justify-start gap-1 h-15 border w-full ">
+              <TabsTrigger value="flight" className="flex  items-center justify-start gap-1 h-15 border w-full ">
                 <Image src="/flight.svg" alt="" width={24} height={15} style={{ width: 24, height: 13 }} /> 
                 <span className="text-red-500 text-xl font-bold">Flight</span>
               </TabsTrigger>
 
-              <TabsTrigger value="flightHotel" className="flex items-center justify-start gap-1  h-15 -top-2 bg-red-400 w-full ">
+              <TabsTrigger value="flightHotel" className="flex items-center justify-start gap-1  h-15 bg-red-400 w-full ">
                 <Image src="/flight-hotel.svg" alt="" width={18} height={18} style={{ width: 18, height: 18 }} />
                 <span className="text-xl">Flight + Hotel &amp; Tours</span>
               </TabsTrigger>
 
-              <TabsTrigger value="checkin" className="flex  items-center justify-start gap-1  h-15 -top-2 bg-red-400  w-full">
+              <TabsTrigger value="checkin" className="flex  items-center justify-start gap-1  h-15 bg-red-400  w-full">
                 <Image src="/checkin.svg" alt="" width={22} height={21} style={{ width: 22, height: 21 }} />
                 <span className="text-xl">Check-in</span>
               </TabsTrigger>
 
-              <TabsTrigger value="manage" className="flex  items-center justify-start gap-1  h-15 -top-2 bg-red-400 w-full">
+              <TabsTrigger value="manage" className="flex  items-center justify-start gap-1  h-15 bg-red-400 w-full">
                 <Image src="/manage-booking.svg" alt="" width={18} height={17} style={{ width: 18, height: 17 }} />
                 <span className="text-xl">Manage booking</span>
               </TabsTrigger>
 
-              <TabsTrigger value="status" className="flex  items-center justify-start gap-1  h-15 -top-2  bg-red-400  w-full">
+              <TabsTrigger value="status" className="flex  items-center justify-start gap-1  h-15  bg-red-400  w-full">
                 <Image src="/flight-status.svg" alt="" width={24} height={16} style={{ width: 24, height: 16 }} />
                 <span className="text-xl ">Flight status</span>
               </TabsTrigger>
 
-              <TabsTrigger value="award" className="flex  items-center justify-start gap-1  h-15 -top-2 bg-red-400  w-full">
+              <TabsTrigger value="award" className="flex  items-center justify-start gap-1  h-15 bg-red-400  w-full">
                 <Image src="/award-ticket.svg" alt="" width={12} height={16} style={{ width: 12, height: 16 }} />
                 <span className="text-xl">Award ticket</span>
               </TabsTrigger>
