@@ -53,7 +53,7 @@ export default function Home() {
 
             <div className="ml-auto flex items-center text-xs gap-5 font-black text-white  hover:bg-green-400 ">
 
-              <TopLinks href="#" title="BOOK&MANAGE" className= " hidden md:flex" />
+              <TopLinks href="#" title="BOOK&MANAGE" className=" hidden md:flex" />
               <TopLinks href="#" title=" EXPERIENCE " className=" hidden md:flex" />
               <TopLinks href="#" title=" DETAILS&DESTINATIONS " className=" hidden md:flex" />
               <TopLinks href="#" title=" MILES&SMILES " className=" hidden md:flex" />
@@ -66,72 +66,118 @@ export default function Home() {
               </div>
               <Image src="/notification.svg" alt="" width={15} height={15} className="mr-5" />
             </div>
-
           </nav>
-
 
         </header>
 
         <div className="absolute top-45 ml-2 md:top-38 md:h-42 w-[90%] md:w-[80%] max-w-220 md:left-1/2 md:-translate-x-1/2 flex flex-col gap-2 text-white text-left">
-          <Link  href="#" className="text-xl md:text-[38px]  hidden md:block">
+          <Link href="#" className="text-xl md:text-[38px]  hidden md:block">
             Choose your destination before summer ends
           </Link>
           <span className="md:hidden font-bold text-[24px]">Extend you summer now</span>
           <span className="text-md md:text-[19px] hidden md:block">
-
             Enjoy Turkish Airlines privileges and make the most of your vacation before the season ends
           </span>
           <span className="md:hidden text-[14px] font-semibold">Fly in style and enjoy your vacation</span>
+
           <button className="sm:backdrop-blur-2xl h-12.75 w-32.5 sm:mx-0 font-semi-bold  md:font-semibold text-[14px] md:border rounded cursor-pointer hidden md:block">
             BOOK NOW
           </button>
-          <Link  href="#" className="text-[16px] font-semibold md:hidden" >BOOK NOW 	&gt; </Link>
+
+          <Link href="#" className="text-[16px] font-semibold md:hidden" >BOOK NOW 	&gt; </Link>
 
         </div>
 
 
-       
-        {/* Mobile Booker Section - Invisible in Desktop */}
-        <section className="absolute left-1/2 -translate-x-1/2 top-82 bg-amber-300 h-70 w-[90%] max-w-174 md:hidden flex flex-col justify-center rounded">
 
-          <Tabs defaultValue="flight" className="flex  gap-1 w-full ">
-            <TabsList className="relative -top-3 h-82! flex flex-col items-baseline gap-1 w-full bg-transparent ">
+        {/* Mobile Booker Section -By Shadcn - Invisible in Desktop */}
+        <section className="absolute left-1/2 -translate-x-1/2 top-82  h-72 w-[90%] max-w-174 md:hidden flex flex-col justify-center ">
+
+          <Tabs className="flex  gap-1 w-full">
+            <TabsList className="relative -top-3 h-82! flex flex-col items-baseline  gap-0.75 w-full rounded-xs">
 
               {/*FLIGHT*/}
-              <TabsTrigger value="flight" className="flex  items-center justify-start gap-1 h-15 border w-full ">
-                <Image src="/flight.svg" alt="" width={24} height={15} style={{ width: 24, height: 13 }} /> 
-                <span className="text-red-500 text-xl font-bold">Flight</span>
+              <TabsTrigger value="flight" className="flex  items-center justify-start gap-4 bg-red-500! px-3 h-11.25 border w-full rounded-none  cursor-pointer">
+                <Image src="/flight.svg" alt="" width={24} height={15} style={{ width: 24, height: 13 }} className="brightness-0 invert " />
+                <span className="text-white text-[16px] font-bold">Flight</span>
               </TabsTrigger>
 
-              <TabsTrigger value="flightHotel" className="flex items-center justify-start gap-1  h-15 bg-red-400 w-full ">
+              <TabsTrigger value="flightHotel" className="flex items-center justify-start gap-4 px-3  h-11.25 border-gray-200 rounded-xs bg-white w-full ">
                 <Image src="/flight-hotel.svg" alt="" width={18} height={18} style={{ width: 18, height: 18 }} />
-                <span className="text-xl">Flight + Hotel &amp; Tours</span>
+                <span className="text-[16px] font-bold text-gray-900">Flight + Hotel & Tours</span>
               </TabsTrigger>
 
-              <TabsTrigger value="checkin" className="flex  items-center justify-start gap-1  h-15 bg-red-400  w-full">
+              <TabsTrigger value="checkin" className="flex  items-center justify-start gap-4 px-3  h-11.25 border-gray-200 rounded-xs bg-white   w-full">
                 <Image src="/checkin.svg" alt="" width={22} height={21} style={{ width: 22, height: 21 }} />
-                <span className="text-xl">Check-in</span>
+                <span className="text-[16px] font-bold text-gray-900">Check-in</span>
               </TabsTrigger>
 
-              <TabsTrigger value="manage" className="flex  items-center justify-start gap-1  h-15 bg-red-400 w-full">
+              <TabsTrigger value="manage" className="flex  items-center justify-start gap-4 px-3  h-11.25 border-gray-200 rounded-xs bg-white  w-full">
                 <Image src="/manage-booking.svg" alt="" width={18} height={17} style={{ width: 18, height: 17 }} />
-                <span className="text-xl">Manage booking</span>
+                <span className="text-[16px] font-bold text-gray-900">Manage booking</span>
               </TabsTrigger>
 
-              <TabsTrigger value="status" className="flex  items-center justify-start gap-1  h-15  bg-red-400  w-full">
+              <TabsTrigger value="status" className="flex  items-center justify-start gap-4 px-3  h-11.25  border-gray-200 rounded-xs bg-white   w-full">
                 <Image src="/flight-status.svg" alt="" width={24} height={16} style={{ width: 24, height: 16 }} />
-                <span className="text-xl ">Flight status</span>
+                <span className="text-[16px] font-bold text-gray-900 ">Flight status</span>
               </TabsTrigger>
 
-              <TabsTrigger value="award" className="flex  items-center justify-start gap-1  h-15 bg-red-400  w-full">
+              <TabsTrigger value="award" className="flex  items-center justify-start gap-4 px-3 h-11.25 border-gray-200 rounded-xs bg-white   w-full">
                 <Image src="/award-ticket.svg" alt="" width={12} height={16} style={{ width: 12, height: 16 }} />
-                <span className="text-xl">Award ticket</span>
+                <span className="text-[16px] font-bold text-gray-900">Award ticket</span>
               </TabsTrigger>
 
             </TabsList>
           </Tabs>
 
         </section>
+
+        {/*   Desktop Booker Section */}
+        <section className=" absolute left-1/2 -translate-x-1/2 top-110 w-[69%] h-351  max-w-989 hidden md:block">
+
+          <Tabs className="flex flex-col gap-0 bg-transparent ">
+
+            {/*Tab List */}
+            <TabsList className="flex relative gap-3 h-[42.4px]! -left-0.75 ">
+
+              {/*FLIGH DESKTOP */}
+              <TabsTrigger value="Flight" className="flex justify-center items-center bg-white h-[42.4px]! gap-2 cursor-pointer rounded rounded-b-none">
+                <Image src="/flight.svg" alt="" width={14} height={14} style={{ width: 14, height: 14 }} />
+                <span className="text-red-500 text-[16px] font-bold">Flight</span>
+              </TabsTrigger>
+
+              <TabsTrigger value="ff" className="flex justify-center items-center bg-[#F4F5F8] h-[42.4px]! rounded gap-2 cursor-pointer p-5 rounded-b-none">
+                <Image src="/flight-hotel.svg" alt="" width={14} height={14} style={{ width: 14, height: 14 }} />
+                <span className="text-gray-600 text-[16px] font-bold">Flight + Hotel & Tours</span>
+              </TabsTrigger>
+
+              <TabsTrigger value="f" className="flex justify-center items-center bg-[#F4F5F8]  h-[42.4px]! rounded gap-2 cursor-pointer rounded-b-none">
+                <Image src="/checkin.svg" alt="" width={14} height={14} style={{ width: 14, height: 14 }} />
+                <span className="text-gray-600 text-[16px] font-bold">Check-in</span>
+              </TabsTrigger>
+
+              <TabsTrigger value="Check-in" className="flexjustify-center items-center bg-[#F4F5F8] w-[150.4px] h-[42.4px]! rounded gap-2 cursor-pointer rounded-b-none">
+                <Image src="/checkin.svg" alt="" width={14} height={14} style={{ width: 14, height: 14 }} />
+                <span className="text-gray-600 text-[16px] font-bold">Check-in</span>
+              </TabsTrigger>
+
+              <TabsTrigger value="Check-in" className="flexjustify-center items-center bg-[#F4F5F8] ] h-[42.4px]! rounded gap-2 cursor-pointer rounded-b-none">
+                <Image src="/checkin.svg" alt="" width={14} height={14} style={{ width: 14, height: 14 }} />
+                <span className="text-gray-600 text-[16px] font-bold">Check-in</span>
+              </TabsTrigger>
+
+            </TabsList>
+
+            {/*Tab Panel */}
+            <Tabs className="bg-white h-56 w-auto">
+
+            </Tabs>
+
+          </Tabs>
+
+        </section>
+
+
       </div>
 
 
