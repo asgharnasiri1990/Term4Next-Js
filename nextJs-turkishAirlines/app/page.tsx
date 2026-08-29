@@ -3,6 +3,15 @@ import TopLinks from "./components/TopLink";
 import Link from "next/link";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
+import {
+  Field,
+  FieldContent,
+  FieldDescription,
+  FieldLabel,
+} from "@/components/ui/field"
+
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+
 export default function Home() {
   return (
     <>
@@ -133,7 +142,7 @@ export default function Home() {
         </section>
 
         {/*   Desktop Booker Section */}
-        <section className=" absolute left-1/2 -translate-x-1/2 top-110 w-[69%] h-351  max-w-989 hidden md:block">
+        <section className=" absolute left-1/2 -translate-x-1/2 top-112.5 w-[69%] h-351  max-w-989 hidden md:block">
 
           <Tabs className="flex flex-col gap-0 bg-transparent ">
 
@@ -141,7 +150,7 @@ export default function Home() {
             <TabsList className="flex relative gap-3 h-[42.4px]! -left-0.75 ">
 
               {/*FLIGH DESKTOP */}
-              <TabsTrigger value="Flight" className="flex justify-center items-center bg-white h-[42.4px]! gap-2 cursor-pointer rounded rounded-b-none">
+              <TabsTrigger value="Flight" className="flex justify-center items-center bg-[#F4F5F8]  h-[42.4px]! gap-2 cursor-pointer rounded rounded-b-none">
                 <Image src="/flight.svg" alt="" width={14} height={14} style={{ width: 14, height: 14 }} />
                 <span className="text-red-500 text-[16px] font-bold">Flight</span>
               </TabsTrigger>
@@ -151,29 +160,68 @@ export default function Home() {
                 <span className="text-gray-600 text-[16px] font-bold">Flight + Hotel & Tours</span>
               </TabsTrigger>
 
-              <TabsTrigger value="f" className="flex justify-center items-center bg-[#F4F5F8]  h-[42.4px]! rounded gap-2 cursor-pointer rounded-b-none">
+              <TabsTrigger value="f" className="flex justify-center items-center bg-[#F4F5F8]  h-[42.4px]! rounded gap-2 cursor-pointer rounded-b-none p-5">
                 <Image src="/checkin.svg" alt="" width={14} height={14} style={{ width: 14, height: 14 }} />
                 <span className="text-gray-600 text-[16px] font-bold">Check-in</span>
               </TabsTrigger>
 
-              <TabsTrigger value="Check-in" className="flexjustify-center items-center bg-[#F4F5F8] w-[150.4px] h-[42.4px]! rounded gap-2 cursor-pointer rounded-b-none">
-                <Image src="/checkin.svg" alt="" width={14} height={14} style={{ width: 14, height: 14 }} />
-                <span className="text-gray-600 text-[16px] font-bold">Check-in</span>
+              <TabsTrigger value="Manage booking" className="flexjustify-center items-center bg-[#F4F5F8] w-[150.4px] h-[42.4px]! rounded gap-2 cursor-pointer rounded-b-none p-5">
+                <Image src="/managebooking.svg" alt="" width={14} height={14} style={{ width: 14, height: 14 }} />
+                <span className="text-gray-600 text-[16px] font-bold">Manage booking</span>
               </TabsTrigger>
 
-              <TabsTrigger value="Check-in" className="flexjustify-center items-center bg-[#F4F5F8] ] h-[42.4px]! rounded gap-2 cursor-pointer rounded-b-none">
-                <Image src="/checkin.svg" alt="" width={14} height={14} style={{ width: 14, height: 14 }} />
-                <span className="text-gray-600 text-[16px] font-bold">Check-in</span>
+              <TabsTrigger value="Flight status" className="flexjustify-center items-center bg-[#F4F5F8] ] h-[42.4px]! rounded gap-2 p-5 cursor-pointer rounded-b-none">
+                <Image src="/Flightstatus.svg" alt="" width={14} height={14} style={{ width: 14, height: 14 }} />
+                <span className="text-gray-600 text-[16px] font-bold">Flight status</span>
               </TabsTrigger>
 
             </TabsList>
-
-            {/*Tab Panel */}
-            <Tabs className="bg-white h-56 w-auto">
-
-            </Tabs>
-
           </Tabs>
+
+
+          <section className="hidden bg-white md:block border-2  gap-5 p-5 h-46.75">
+
+            {/*Radio Tab Panel */}
+            <section className=" h-9 flex items-center  border-2 ">
+              <RadioGroup defaultValue="round" className="flex items-baseline gap-4 ">
+
+                <div className="flex items-center gap-1">
+                  <RadioGroupItem value="round" id="trip-round"  className="border-blue-900 border-2"/>
+                  <label htmlFor="trip-round" className="text-gray-800 text-[16px] font-bold cursor-pointer">
+                    Round Trip
+                  </label>
+                </div>
+
+                <div className="flex items-center gap-1">
+                  <RadioGroupItem value="oneway" id="trip-oneway" className="border-blue-900 border-2"/>
+                  <label htmlFor="trip-oneway" className="text-gray-800 text-[16px] font-bold cursor-pointer">
+                    One Way
+                  </label>
+                </div>
+
+                <div className="flex items-center gap-1">
+                  <RadioGroupItem value="stopover" id="trip-stopover" className="border-blue-900 border-2 "/>
+                  <label htmlFor="trip-stopover" className="text-gray-800 text-[16px] font-bold cursor-pointer">
+                    Stopover in Istanbul
+                  </label>
+                </div>
+
+                <div className="flex items-center gap-1">
+                  <RadioGroupItem value="multicity" id="trip-multicity" className="border-blue-900 border-2"/>
+                  <label htmlFor="trip-multicity" className="text-gray-800 text-[16px] font-bold cursor-pointer">
+                    Multi-city
+                  </label>
+                </div>
+
+              </RadioGroup>
+
+              <div className="flex cursor-pointer min-w-72">
+                <Image src="/awardticket.svg" alt="" width={24} height={24} style={{ width: 24, height: 24 }} />
+                <span className="text-[16px] font-bold">Award ticket - Buy a ticket with Miles</span>
+              </div>
+            </section>
+
+          </section>
 
         </section>
 
