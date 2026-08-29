@@ -2,14 +2,6 @@ import Image from "next/image";
 import TopLinks from "./components/TopLink";
 import Link from "next/link";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-
-import {
-  Field,
-  FieldContent,
-  FieldDescription,
-  FieldLabel,
-} from "@/components/ui/field"
-
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 
 export default function Home() {
@@ -146,7 +138,7 @@ export default function Home() {
 
           <Tabs className="flex flex-col gap-0 bg-transparent ">
 
-            {/*Tab List */}
+            {/*Tabs List */}
             <TabsList className="flex relative gap-3 h-[42.4px]! -left-0.75 ">
 
               {/*FLIGH DESKTOP */}
@@ -178,36 +170,36 @@ export default function Home() {
             </TabsList>
           </Tabs>
 
-
-          <section className="hidden bg-white md:block border-2  gap-5 p-5 h-46.75">
+          {/*Radio Panel Section */}
+          <section className=" hidden bg-white md:block border-2 p-5 h-46.75">
 
             {/*Radio Tab Panel */}
             <section className=" h-9 flex items-center  border-2 ">
               <RadioGroup defaultValue="round" className="flex items-baseline gap-4 ">
 
                 <div className="flex items-center gap-1">
-                  <RadioGroupItem value="round" id="trip-round"  className="border-blue-900 border-2"/>
+                  <RadioGroupItem value="round" id="trip-round" className="border-blue-900 border-2" />
                   <label htmlFor="trip-round" className="text-gray-800 text-[16px] font-bold cursor-pointer">
                     Round Trip
                   </label>
                 </div>
 
                 <div className="flex items-center gap-1">
-                  <RadioGroupItem value="oneway" id="trip-oneway" className="border-blue-900 border-2"/>
+                  <RadioGroupItem value="oneway" id="trip-oneway" className="border-blue-900 border-2" />
                   <label htmlFor="trip-oneway" className="text-gray-800 text-[16px] font-bold cursor-pointer">
                     One Way
                   </label>
                 </div>
 
                 <div className="flex items-center gap-1">
-                  <RadioGroupItem value="stopover" id="trip-stopover" className="border-blue-900 border-2 "/>
+                  <RadioGroupItem value="stopover" id="trip-stopover" className="border-blue-900 border-2 " />
                   <label htmlFor="trip-stopover" className="text-gray-800 text-[16px] font-bold cursor-pointer">
                     Stopover in Istanbul
                   </label>
                 </div>
 
                 <div className="flex items-center gap-1">
-                  <RadioGroupItem value="multicity" id="trip-multicity" className="border-blue-900 border-2"/>
+                  <RadioGroupItem value="multicity" id="trip-multicity" className="border-blue-900 border-2" />
                   <label htmlFor="trip-multicity" className="text-gray-800 text-[16px] font-bold cursor-pointer">
                     Multi-city
                   </label>
@@ -219,9 +211,29 @@ export default function Home() {
                 <Image src="/awardticket.svg" alt="" width={24} height={24} style={{ width: 24, height: 24 }} />
                 <span className="text-[16px] font-bold">Award ticket - Buy a ticket with Miles</span>
               </div>
-            </section>
+            </section> {/* End of Radio Button */}
 
+            {/* Flights search box */}
+            <section className="bg-red-400 h-16.5 flex px-3 py-1">
+              <div className="relative flex  items-center gap-3 ">
+
+                <div className="h-full w-35 ">
+                  <input type="text" placeholder="From" className="text-center h-full bg-white w-full font-bold placeholder:text-gray-500"  />
+                </div>
+
+                <div className="h-full ">
+                  <input type="text" placeholder="To" className="h-full text-center bg-white font-bold placeholder:'To' placeholder:text-gray-500" />
+                </div>
+
+                <button className="absolute top-1/2 left-36.5 -translate-x-1/2 -translate-y-1/2 cursor-pointer bg-white rounded-full border p-1 z-10">
+                  <Image src="/refresh.svg" alt="" width={24} height={24} style={{ width: 24, height: 24 }} />
+                </button>
+
+              </div>
+            </section>
           </section>
+
+
 
         </section>
 
