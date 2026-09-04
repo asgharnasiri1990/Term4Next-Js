@@ -52,7 +52,7 @@ export default function Home() {
 
             </div>
 
-            <div className="ml-auto flex items-center text-xs gap-5 font-black text-white  hover:bg-green-400 ">
+            <div className="ml-auto flex items-center text-xs gap-5 font-black text-white  ">
 
               <TopLinks href="#" title="BOOK&MANAGE" className=" hidden md:flex" />
               <TopLinks href="#" title=" EXPERIENCE " className=" hidden md:flex" />
@@ -134,7 +134,7 @@ export default function Home() {
         </section>
 
         {/*   Desktop Booker Section */}
-        <section className=" absolute left-1/2 -translate-x-1/2 top-112.5 w-[69%] h-351  max-w-989 hidden md:block">
+        <section className=" absolute left-1/2 -translate-x-1/2 top-112.5 h-351  max-w-989 hidden md:block">
 
           <Tabs className="flex flex-col gap-0 bg-transparent ">
 
@@ -171,10 +171,10 @@ export default function Home() {
           </Tabs>
 
           {/*Radio Panel Section */}
-          <section className=" hidden bg-white md:block border-2 p-5 h-46.75">
+          <section className=" hidden bg-white md:block rounded shadow-xl p-5 h-46.75">
 
             {/*Radio Tab Panel */}
-            <section className=" h-9 flex items-center  border-2 ">
+            <section className=" h-9 flex items-center   px-1 ">
               <RadioGroup defaultValue="round" className="flex items-baseline gap-4 ">
 
                 <div className="flex items-center gap-1">
@@ -214,22 +214,56 @@ export default function Home() {
             </section> {/* End of Radio Button */}
 
             {/* Flights search box */}
-            <section className="bg-red-400 h-16.5 flex px-3 py-1">
-              <div className="relative flex  items-center gap-3 ">
+            <section className=" h-16.5 flex  py-1">
+              <div className="relative flex  items-center gap-2 ">
 
-                <div className="h-full w-35 ">
-                  <input type="text" placeholder="From" className="text-center h-full bg-white w-full font-bold placeholder:text-gray-500"  />
+                <div className="flex h-full w-48.25 ">
+                  <div className="flex flex-col p-5 justify-center h-full bg-[#F4F5F8] w-full">
+                    <span className="text-gray-500 font-light text-xs leading-none">From</span>
+                    <input type="text" placeholder="Istanbul" className="font-bold placeholder:text-gray-800 leading-none" />
+                    <span className="TEXT-XS text-gray-500 leading-none">istanbul(All)</span>
+                  </div>
                 </div>
 
-                <div className="h-full ">
-                  <input type="text" placeholder="To" className="h-full text-center bg-white font-bold placeholder:'To' placeholder:text-gray-500" />
+                <div className="h-full flex items-baseline">
+                  <input type="text" placeholder="To" className="h-full p-4 bg-[#F4F5F8] font-bold  placeholder:text-gray-500" />
                 </div>
 
-                <button className="absolute top-1/2 left-36.5 -translate-x-1/2 -translate-y-1/2 cursor-pointer bg-white rounded-full border p-1 z-10">
+                <button className="absolute top-1/2 left-49.75 -translate-x-1/2 -translate-y-1/2 cursor-pointer bg-white rounded-full border p-1 z-10">
                   <Image src="/refresh.svg" alt="" width={24} height={24} style={{ width: 24, height: 24 }} />
                 </button>
 
+                <div className="flex h-full w-48.25 cursor-pointer">
+                  <div className="flex gap-4 h-full w-full items-center p-5 bg-[#F4F5F8]">
+                    <Image
+                      src="/date.svg"
+                      alt=""
+                      width={20}
+                      height={20}
+                    />
+
+                    <input
+                      type="text"
+                      placeholder="Dates"
+                      className="w-20   font-bold placeholder:text-gray-500 cursor-pointer"
+                    />
+                  </div>
+                </div>
+
+                <div className="flex h-full w-48.25 ">
+                  <div className="flex flex-col p-5 justify-center h-full bg-[#F4F5F8] w-full">
+                    <span className="text-gray-500 font-light text-xs leading-none">Passangers</span>
+                    <input type="text" placeholder="1 Passanger" className="font-bold placeholder:text-gray-800 leading-none cursor-pointer" />
+                    <span className="TEXT-XS text-gray-500 leading-none">ECO</span>
+                  </div>
+                </div>
+
+                <div className="h-full bg-[#e81932] rounded ">
+                  <input type="text" placeholder="Search Flights" className="w-31 h-full text-center  font-semibold placeholder:text-white cursor-pointer" />
+                </div>
+
               </div>
+
             </section>
           </section>
 
