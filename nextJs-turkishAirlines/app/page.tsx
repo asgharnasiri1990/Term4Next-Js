@@ -3,6 +3,7 @@ import TopLinks from "./components/TopLink";
 import Link from "next/link";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+import Seat from "./components/Seat";
 
 export default function Home() {
   return (
@@ -88,8 +89,6 @@ export default function Home() {
           <Link href="#" className="text-[16px] font-semibold md:hidden" >BOOK NOW 	&gt; </Link>
 
         </div>
-
-
 
         {/* Mobile Booker Section -By Shadcn - Invisible in Desktop */}
         <section className="absolute left-1/2 -translate-x-1/2 top-82  h-72 w-[90%] max-w-174 md:hidden flex flex-col justify-center ">
@@ -213,7 +212,7 @@ export default function Home() {
               </div>
             </section> {/* End of Radio Button */}
 
-            {/* Flights search box */}
+            {/* Flights Booker Menu */}
             <section className=" h-16.5 flex  py-1">
               <div className="relative flex  items-center gap-2 ">
 
@@ -263,17 +262,31 @@ export default function Home() {
                 </div>
 
               </div>
-
             </section>
+
+          </section>
+
+          {/* Schedule Box Seat Selection */}
+          <section className=" mt-6  h-24.5 shadow-xs ">
+            <div >
+              <ul className="grid grid-cols-6 ">
+
+                <Seat icon="/seat.svg" title=" seat selection" />
+                <Seat icon="/extrabagage.svg" title="Extra bagage" />
+                <Seat icon="/bookhotel.svg" title="Book a hotel" />
+                <Seat icon="/car.svg" title="Rent a car" />
+                <Seat icon="/travelinsurance.svg" title="Travel insurance" />
+                <Seat icon="/giftcard.svg" title="Gift card" />
+
+              </ul>
+            </div>
           </section>
 
 
 
         </section>
 
-
       </div>
-
 
     </>
   )
