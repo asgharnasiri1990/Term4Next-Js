@@ -42,12 +42,15 @@ export default function Home() {
       setAgeError("")
     }
 
-     // Age conditions
+     // Password conditions
   if (password === "") {
     setPasswordError("Password is reqired")
   }
   else if (password.length < 8) {
     setPasswordError("Password must be at least 8 characters")
+  }
+  else if(! /\d/.test(password)){
+    setPasswordError("Password must contain a number")
   }
   else {
     setPasswordError("")
@@ -63,12 +66,12 @@ export default function Home() {
 
     // User Interface
     <div className="flex items-center justify-center pt-10 ">
-      <div className="border rounded border-blue-300 w-auto">
+      <div className="border rounded-full border-blue-300 w-auto">
 
-        <div className="flex flex-col border-white border w-150 h-110 p-5 gap-2 rounded bg-yellow-200">
+        <div className="flex flex-col justify-center items-center border-white border w-150 h-110 p-5 gap-2 rounded-full bg-gray-200">
 
           <div className="flex justify-center">
-            <div className="bg-gray-200 p-2 rounded items-center font-bold text-center text-xl text-green-500">
+            <div className="bg-gray-00 p-2 rounded items-center font-bold text-center text-xl text-green-500">
               <span> Registeration Form: </span>
             </div>
           </div>
@@ -81,21 +84,20 @@ export default function Home() {
                 value={name}
                 type="text"
                 onChange={(e) => setName(e.target.value)}
-                placeholder="Full Name:" className="border w-full h-12 rounded p-3 text-xl hover:scale-102 bg-gray-100 placeholder:text-xs transition-transform" />
-              {nameError && (<p className="text-red-500 pl-3"> {nameError} </p>)}
+                placeholder="Full Name:" className="border w-80 h-10 rounded-full p-3 hover:scale-102 bg-gray-100 placeholder:text-xs transition-transform" />
+              {nameError && (<p className="text-red-500 pl-3 text-xs"> {nameError} </p>)}
             </div>
 
             {/* Age Field */}
             <div>
-
               <input
                 value={age}
                 onChange={(e) => setAge(e.target.value)}
                 type="text"
-
                 placeholder="Age:"
-                className="border bg-gray-100 w-full h-12 rounded p-3 text-xl hover:scale-102 placeholder:text-xs transition-transform" />
-              {ageError && (<p className="text-red-500 pl-3"> {ageError} </p>)}
+                className="border bg-gray-100 w-80 h-10 rounded-full p-3 hover:scale-102 placeholder:text-xs transition-transform" />
+
+              {ageError && (<p className="text-red-500 pl-3 text-xs"> {ageError} </p>)}
             </div>
 
 
@@ -106,17 +108,17 @@ export default function Home() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter Password:"
-                className="border bg-gray-100 w-full h-12 rounded p-3 text-xl placeholder:text-xs hover:scale-102 transition-transform" />
-                {passwordError && (<p className="text-red-500 pl-3"> {passwordError} </p>)}
+                className="border bg-gray-100 w-80 h-10 rounded-full p-3 placeholder:text-xs hover:scale-102 transition-transform" />
+                {passwordError && (<p className="text-red-500 pl-3 text-xs"> {passwordError} </p>)}
             </div>
             
             {/*Submit Button */}
             <div className="flex justify-center">
-              <div className="bg-gray-300 p-2 rounded items-center font-bold text-center text-xl ">
+              <div className="bg-gray-300 p-2 rounded-full items-center font-bold text-center text-xl ">
                 <button
                   onClick={handleSubmit}
 
-                  className="bg-gray-100 w-30 items-end cursor-pointer  rounded p-1 hover:scale-110 active:bg-red-300 transition-transform">Submit</button>
+                  className="bg-gray-100 w-30 items-end cursor-pointer  rounded-full p-1 hover:scale-110 active:bg-red-300 transition-transform">Submit</button>
               </div>
             </div>
           </div>
