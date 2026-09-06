@@ -1,8 +1,63 @@
 "use client"
-import { useState } from "react";
+import { use, useState } from "react";
 
 export default function Home() {
-  
+
+  // Name Field State:
+  const [name, setName] = useState("");
+  const [nameError, setNameError] = useState("")
+
+  // Age Field State:
+  const [age, setAge] = useState("")
+  const [ageError, setAgeError] = useState("")
+
+  // Password Field State:
+  const [password, setPassword] = useState("")
+  const [passwordError, setPasswordError] = useState("")
+
+  //Click on Submit Function:
+  function handleSubmit() {
+
+    // Name conditions
+    if (name.trim().length === 0) {
+      setNameError("Name is required")
+    }
+    else if (name.length < 5) {
+      setNameError("Name must be at least 5 characters")
+    } else {
+      setNameError("")
+    }
+
+    // Age conditions
+    if (age === "") {
+      setAgeError("Age is required")
+    }
+    else if (isNaN(Number(age))) {
+      setAgeError("Age must be a number")
+    }
+    else if (Number(age) < 18) {
+      setAgeError("Age must be 18 or above. ")
+    }
+    else {
+      setAgeError("")
+    }
+
+     // Age conditions
+  if (password === "") {
+    setPasswordError("Password is reqired")
+  }
+  else if (password.length < 8) {
+    setPasswordError("Password must be at least 8 characters")
+  }
+  else {
+    setPasswordError("")
+  }
+
+  }
+
+ 
+
+
   return (
 
 
@@ -19,21 +74,48 @@ export default function Home() {
           </div>
 
           {/* Froms Inputs*/}
-          <div className=" flex flex-col gap-10 p-4 ">
-            <input
-           
-              type="text"
-             
-              placeholder="Full Name:" className="border w-full h-12 rounded p-3 text-xl hover:scale-102 bg-gray-100 placeholder:text-xs transition-transform" />
+          <div className=" flex flex-col gap-5 p-4 ">
+            {/* Name field */}
+            <div className="flex flex-col gap-1">
+              <input
+                value={name}
+                type="text"
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Full Name:" className="border w-full h-12 rounded p-3 text-xl hover:scale-102 bg-gray-100 placeholder:text-xs transition-transform" />
+              {nameError && (<p className="text-red-500 pl-3"> {nameError} </p>)}
+            </div>
 
-            <input type="text" placeholder="Age:" className="border bg-gray-100 w-full h-12 rounded p-3 text-xl hover:scale-102 placeholder:text-xs transition-transform" />
+            {/* Age Field */}
+            <div>
 
-            <input type="text" placeholder="Enter Password:" className="border bg-gray-100 w-full h-12 rounded p-3 text-xl placeholder:text-xs hover:scale-102 transition-transform" />
+              <input
+                value={age}
+                onChange={(e) => setAge(e.target.value)}
+                type="text"
 
+                placeholder="Age:"
+                className="border bg-gray-100 w-full h-12 rounded p-3 text-xl hover:scale-102 placeholder:text-xs transition-transform" />
+              {ageError && (<p className="text-red-500 pl-3"> {ageError} </p>)}
+            </div>
+
+
+            {/* Password Field */}
+            <div>
+
+              <input type="text"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Enter Password:"
+                className="border bg-gray-100 w-full h-12 rounded p-3 text-xl placeholder:text-xs hover:scale-102 transition-transform" />
+                {passwordError && (<p className="text-red-500 pl-3"> {passwordError} </p>)}
+            </div>
+            
             {/*Submit Button */}
             <div className="flex justify-center">
               <div className="bg-gray-300 p-2 rounded items-center font-bold text-center text-xl ">
                 <button
+                  onClick={handleSubmit}
+
                   className="bg-gray-100 w-30 items-end cursor-pointer  rounded p-1 hover:scale-110 active:bg-red-300 transition-transform">Submit</button>
               </div>
             </div>
