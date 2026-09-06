@@ -42,23 +42,33 @@ export default function Home() {
       setAgeError("")
     }
 
-     // Password conditions
-  if (password === "") {
-    setPasswordError("Password is reqired")
-  }
-  else if (password.length < 8) {
-    setPasswordError("Password must be at least 8 characters")
-  }
-  else if(! /\d/.test(password)){
-    setPasswordError("Password must contain a number")
-  }
-  else {
-    setPasswordError("")
-  }
+    // Password conditions
+    if (password === "") {
+      setPasswordError("Password is reqired")
+    }
+    else if (password.length < 8) {
+      setPasswordError("Password must be at least 8 characters")
+    }
+    else if (! /\d/.test(password)) {
+      setPasswordError("Password must contain a number")
+    }
+    else if (!/[A-Z]/.test(password)) {
+      setPasswordError("Password must contain an uppercase letter")
+    }
+    else if(!/[a-z]/.test(password)){
+      setPasswordError("Password must contain a lowercase letter")
+    }
+    else if (!/[!@#$%^&*()]/.test(password)) {
+      setPasswordError("Password must contain a special character")
+    }
+
+    else {
+      setPasswordError("")
+    }
 
   }
 
- 
+
 
 
   return (
@@ -109,9 +119,9 @@ export default function Home() {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter Password:"
                 className="border bg-gray-100 w-80 h-10 rounded-full p-3 placeholder:text-xs hover:scale-102 transition-transform" />
-                {passwordError && (<p className="text-red-500 pl-3 text-xs"> {passwordError} </p>)}
+              {passwordError && (<p className="text-red-500 pl-3 text-xs"> {passwordError} </p>)}
             </div>
-            
+
             {/*Submit Button */}
             <div className="flex justify-center">
               <div className="bg-gray-300 p-2 rounded-full items-center font-bold text-center text-xl ">
