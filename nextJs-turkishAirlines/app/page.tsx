@@ -13,7 +13,7 @@ export default function Home() {
         {/* Hero Image */}
 
         <Image
-          src="/hero2.webp"
+          src="/hero4.webp"
           alt="Turkish Airlines"
           fill
           priority
@@ -25,7 +25,7 @@ export default function Home() {
         <header className="absolute top-0 left-0 w-full">
 
           {/* Top Bar */}
-          <div className=" h-8 w-full bg-[#333C49] flex justify-end items-center text-[#c3cbd7] text-xs font-semibold pr-5 gap-3" >
+          <div className=" h-8 w-full bg-[#333C49] flex justify-end items-center text-[#c3cbd7] text-[10px] pr-5 gap-3" >
 
             <TopLinks href="#" title="Turkish Airlines Holidays" className="hidden md:flex" />
             <TopLinks href="#" title="Corporate Club" className="hidden md:flex" />
@@ -99,7 +99,7 @@ export default function Home() {
               {/*FLIGHT*/}
               <TabsTrigger value="flight" className="flex  items-center justify-start gap-4 bg-red-500! px-3 h-11.25 border w-full rounded-none  cursor-pointer">
                 <Image src="/flight.svg" alt="" width={24} height={15} style={{ width: 24, height: 13 }} className="brightness-0 invert " />
-                <span className="text-white text-[16px] font-bold">Flight</span>
+                <span className="text-white text-[16px] font-extrabold">Flight</span>
               </TabsTrigger>
 
               <TabsTrigger value="flightHotel" className="flex items-center justify-start gap-4 px-3  h-11.25 border-gray-200 rounded-xs bg-white w-full ">
@@ -138,32 +138,32 @@ export default function Home() {
           <Tabs className="flex flex-col gap-0 bg-transparent ">
 
             {/*Tabs List */}
-            <TabsList className="flex relative gap-3 h-[42.4px]! -left-0.75 ">
+            <TabsList className="flex relative gap-1 h-[42.4px]! -left-0.75 ">
 
               {/*FLIGH DESKTOP */}
               <TabsTrigger value="Flight" className="flex justify-center items-center bg-[#F4F5F8]  h-[42.4px]! gap-2 cursor-pointer rounded rounded-b-none">
                 <Image src="/flight.svg" alt="" width={14} height={14} style={{ width: 14, height: 14 }} />
-                <span className="text-red-500 text-[16px] font-bold">Flight</span>
+                <span className="text-red-500 text-[12px] font-bold">Flight</span>
               </TabsTrigger>
 
               <TabsTrigger value="ff" className="flex justify-center items-center bg-[#F4F5F8] h-[42.4px]! rounded gap-2 cursor-pointer p-5 rounded-b-none">
                 <Image src="/flight-hotel.svg" alt="" width={14} height={14} style={{ width: 14, height: 14 }} />
-                <span className="text-gray-600 text-[16px] font-bold">Flight + Hotel & Tours</span>
+                <span className="text-gray-600 text-[12px] font-bold">Flight + Hotel & Tours</span>
               </TabsTrigger>
 
               <TabsTrigger value="f" className="flex justify-center items-center bg-[#F4F5F8]  h-[42.4px]! rounded gap-2 cursor-pointer rounded-b-none p-5">
                 <Image src="/checkin.svg" alt="" width={14} height={14} style={{ width: 14, height: 14 }} />
-                <span className="text-gray-600 text-[16px] font-bold">Check-in</span>
+                <span className="text-gray-600 text-[12px] font-bold">Check-in</span>
               </TabsTrigger>
 
               <TabsTrigger value="Manage booking" className="flexjustify-center items-center bg-[#F4F5F8] w-[150.4px] h-[42.4px]! rounded gap-2 cursor-pointer rounded-b-none p-5">
                 <Image src="/managebooking.svg" alt="" width={14} height={14} style={{ width: 14, height: 14 }} />
-                <span className="text-gray-600 text-[16px] font-bold">Manage booking</span>
+                <span className="text-gray-600 text-[12px] font-bold">Manage booking</span>
               </TabsTrigger>
 
               <TabsTrigger value="Flight status" className="flexjustify-center items-center bg-[#F4F5F8] ] h-[42.4px]! rounded gap-2 p-5 cursor-pointer rounded-b-none">
                 <Image src="/Flightstatus.svg" alt="" width={14} height={14} style={{ width: 14, height: 14 }} />
-                <span className="text-gray-600 text-[16px] font-bold">Flight status</span>
+                <span className="text-gray-600 text-[12px] font-bold">Flight status</span>
               </TabsTrigger>
 
             </TabsList>
@@ -173,33 +173,33 @@ export default function Home() {
           <section className=" hidden bg-white md:block rounded shadow-xl p-5 h-46.75">
 
             {/*Radio Tab Panel */}
-            <section className=" h-9 flex items-center   px-1 ">
-              <RadioGroup defaultValue="round" className="flex items-baseline gap-4 ">
+            <section className=" h-9 flex items-center px-1 ">
+              <RadioGroup defaultValue="round" className="flex items-baseline gap-5 ">
 
                 <div className="flex items-center gap-1">
                   <RadioGroupItem value="round" id="trip-round" className="border-blue-900 border-2" />
-                  <label htmlFor="trip-round" className="text-gray-800 text-[16px] font-bold cursor-pointer">
+                  <label htmlFor="trip-round" className="text-gray-800 text-[12px] font-bold cursor-pointer">
                     Round Trip
                   </label>
                 </div>
 
                 <div className="flex items-center gap-1">
                   <RadioGroupItem value="oneway" id="trip-oneway" className="border-blue-900 border-2" />
-                  <label htmlFor="trip-oneway" className="text-gray-800 text-[16px] font-bold cursor-pointer">
+                  <label htmlFor="trip-oneway" className="text-gray-800 text-[12px] font-bold cursor-pointer">
                     One Way
                   </label>
                 </div>
 
                 <div className="flex items-center gap-1">
                   <RadioGroupItem value="stopover" id="trip-stopover" className="border-blue-900 border-2 " />
-                  <label htmlFor="trip-stopover" className="text-gray-800 text-[16px] font-bold cursor-pointer">
+                  <label htmlFor="trip-stopover" className="text-gray-800 text-[12px] font-bold cursor-pointer">
                     Stopover in Istanbul
                   </label>
                 </div>
 
                 <div className="flex items-center gap-1">
                   <RadioGroupItem value="multicity" id="trip-multicity" className="border-blue-900 border-2" />
-                  <label htmlFor="trip-multicity" className="text-gray-800 text-[16px] font-bold cursor-pointer">
+                  <label htmlFor="trip-multicity" className="text-gray-800 text-[12px] font-bold cursor-pointer">
                     Multi-city
                   </label>
                 </div>
@@ -208,12 +208,12 @@ export default function Home() {
 
               <div className="flex cursor-pointer min-w-72">
                 <Image src="/awardticket.svg" alt="" width={24} height={24} style={{ width: 24, height: 24 }} />
-                <span className="text-[16px] font-bold">Award ticket - Buy a ticket with Miles</span>
+                <span className="text-[12px] font-bold">Award ticket - Buy a ticket with Miles</span>
               </div>
             </section> {/* End of Radio Button */}
 
             {/* Flights Booker Menu */}
-            <section className=" h-16.5 flex  py-1">
+            <section className=" h-16.5 flex text-[12px] py-1">
               <div className="relative flex  items-center gap-2 ">
 
                 <div className="flex h-full w-48.25 ">
@@ -269,7 +269,7 @@ export default function Home() {
           {/* Schedule Box Seat Selection */}
           <section className=" mt-6  h-24.5 shadow-xs ">
             <div >
-              <ul className="grid grid-cols-6 ">
+              <ul className="grid grid-cols-6 text-bold">
 
                 <Seat icon="/seat.svg" title=" seat selection" />
                 <Seat icon="/extrabagage.svg" title="Extra bagage" />
