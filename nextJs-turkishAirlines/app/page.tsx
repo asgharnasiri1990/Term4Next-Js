@@ -13,7 +13,7 @@ export default function Home() {
         {/* Hero Image */}
 
         <Image
-          src="/hero4.webp"
+          src="/hero3.webp"
           alt="Turkish Airlines"
           fill
           priority
