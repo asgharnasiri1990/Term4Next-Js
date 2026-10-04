@@ -1,7 +1,6 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 
-
 const page = () => {
 
     const [products, setProducts] = useState<Product[]>([]);;
@@ -17,6 +16,7 @@ const page = () => {
         tags: string;
         category: string;
     };
+
     useEffect(() => {
 
         const data = fetch("https://dummyjson.com/products").then(
@@ -25,8 +25,6 @@ const page = () => {
                 const body = await data.json();
                 setLoading(false)
                 setProducts(body.products)
-
-
             },
         )
 
@@ -53,10 +51,8 @@ const page = () => {
                     value={selectedItem}
                     onChange={(e) => setSelectedItem(e.target.value)}
                     className="flex items-center justify-center text-2xl"
-
                 >
                     <option>All</option>
-
                     {categories.map((category) => (
                         <option key={category} value={category}>
                             {category}
@@ -68,7 +64,6 @@ const page = () => {
 
             <div className='flex flex-wrap gap-1 justify-center text-xl'>
 
-
                 {loading && (
                     <div className="flex justify-center items-center p-10">
                         <div className="w-10 h-10 border-4 border-gray-300 border-t-blue-500 rounded-full animate-spin"></div>
@@ -78,8 +73,6 @@ const page = () => {
 
                 {filteredProducts.map((product) => (
                     <>
-
-
                         <div key={product.id} className='flex flex-col items-center bg-white w-100 cursor-pointer'>
 
                             <img src={product.thumbnail} alt={product.title} className="h-48 object-contain" />
@@ -90,12 +83,10 @@ const page = () => {
                                 <span className='text-gray-500 '>tag: {product.tags}</span>
                                 <span className='text-gray-500 '>rating:{product.rating}</span>
                             </div>
-
+                            
                         </div>
                     </>
                 ))}
-
-
             </div>
         </div>
 
