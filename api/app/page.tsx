@@ -19,7 +19,7 @@ const page = () => {
 
     useEffect(() => {
 
-        const data = fetch("https://dummyjson.com/products").then(
+        const data = fetch("https://practice.amirm.me/todos").then(
 
             async (data) => {
                 const body = await data.json();
