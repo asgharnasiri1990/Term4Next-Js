@@ -39,7 +39,7 @@ const page = () => {
   };
 
   const handleDelete = () => {
-    fetch("https://practice.amirm.me/todos/9", {
+    fetch("https://practice.amirm.me/todos/16", {
       method: "DELETE",
     }).then(async (res) => {
       const data = await res.json();
