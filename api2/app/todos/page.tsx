@@ -17,9 +17,9 @@ const page = () => {
 
   const handleClick = () => {
     const data = {
-     
+
       title: inputData,
-      completed:true
+      completed: true
     };
 
     // fetching api for POSTing a new data
@@ -42,9 +42,9 @@ const page = () => {
     });
   };
 
-  // fetching api for DELETINGing a new data
+  // fetching api for Deleteing a new data
   const handleDelete = () => {
-    fetch("https://practice.amirm.me/todos/27", {
+    fetch("https://practice.amirm.me/todos/34", {
       method: "DELETE",
     }).then(async (res) => {
       const data = await res.json();
@@ -65,6 +65,7 @@ const page = () => {
     );
   }, []);
 
+  // Body
   return (
     <div className="flex flex-col justify-center items-center gap-4 p10">
 
@@ -78,13 +79,13 @@ const page = () => {
           className="border w-100 h-10 rounded p-2"
         />
 
-        <button className="rounded font-semibold text-white/90 bg-green-400 h-10 w-20 cursor-pointer"
+        <button className="rounded font-semibold text-white/90 bg-green-400 hover:bg-green-500 transition-colors duration-300 h-10 w-20 cursor-pointer"
           onClick={handleClick}
         >
-          Send
+          POST
         </button>
 
-        <button className="rounded font-semibold bg-red-500 h-10 w-20 cursor-pointer"
+        <button className="rounded font-semibold bg-red-300 hover:bg-red-700 transition-colors hover:rotate-180 duration-300 h-10 w-20 cursor-pointer"
           onClick={handleDelete}
         >
           DELETE
@@ -94,7 +95,7 @@ const page = () => {
 
       {loading && (
         <div className="flex flex-col  gap-5 justify-center items-center p-10">
-          <div className="w-15 h-15 border-4 border-gray-300 border-t-blue-500 rounded-full animate-spin"></div>
+          <div className="w-15 h-15 border-4 border-gray-300 border-t-blue-500  rounded-full animate-spin"></div>
           <span>  LOADING ...</span>
         </div>
       )}
@@ -103,9 +104,11 @@ const page = () => {
         {todos.map((todo, index) => (
           <div
             key={todo.id}
-            className="flex flex-col items-center bg-gray-100 gap-2 w-50 justify-center p-2 border-amber-300 border  rounded-xl"
+            className="flex flex-col items-center bg-gray-100 gap-2 w-60 justify-center p-2 border-amber-300 border  rounded-xl"
           >
-            <span>Id:{todo.id}. {todo.title}</span>
+            <span>Id:{todo.id}</span>
+            <span>{todo.title}</span>
+
             <span>{todo.completed}</span>
 
             <span className="text-sm opacity-60">
