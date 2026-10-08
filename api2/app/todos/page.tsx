@@ -43,14 +43,20 @@ const page = () => {
   };
 
   // fetching api for Deleteing a new data
-  const handleDelete = () => {
-    fetch("https://practice.amirm.me/todos/34", {
-      method: "DELETE",
-    }).then(async (res) => {
-      const data = await res.json();
-      console.log(data);
+  const handleDelete = (id) => {
+    fetch(`https://practice.amirm.me/todos/${id}`, {
+      method: "DELETE"
     });
+
   };
+  // const handleDelete = (todos.id) => {
+  //   fetch("https://practice.amirm.me/todos/35", {
+  //     method: "DELETE",
+  //   }).then(async (res) => {
+  //     const data = await res.json();
+  //     console.log(data);
+  //   });
+  // };
 
   //   UseEffect Part
   useEffect(() => {
@@ -119,6 +125,12 @@ const page = () => {
               Updated: {todo.updated_at}
 
             </span>
+            <button className="rounded font-semibold bg-red-300 hover:bg-red-700 transition-colors hover:rotate-180 duration-300 h-10 w-20 cursor-pointer"
+              onClick={() => handleDelete(todo.id)}
+            >
+              DELETE
+            </button>
+
           </div>
 
         ))}
