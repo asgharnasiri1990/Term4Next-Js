@@ -6,6 +6,7 @@ const page = () => {
   const [loading, setLoading] = useState(true);
   const [inputData, setInputData] = useState("")
 
+
   type todo = {
     id: number;
     title: string;
@@ -91,26 +92,26 @@ const page = () => {
           POST
         </button>
 
-        <button className="rounded font-semibold bg-red-300 hover:bg-red-700 transition-colors hover:rotate-180 duration-300 h-10 w-20 cursor-pointer"
+        {/* <button className="rounded font-semibold bg-red-300 hover:bg-red-700 transition-colors hover:rotate-180 duration-300 h-10 w-20 cursor-pointer"
           onClick={handleDelete}
         >
           DELETE
-        </button>
+        </button> */}
 
       </div>
 
-      {loading && (
+      {/* {loading && (
         <div className="flex flex-col  gap-5 justify-center items-center p-10">
           <div className="w-15 h-15 border-4 border-gray-300 border-t-blue-500  rounded-full animate-spin"></div>
           <span>  LOADING ...</span>
         </div>
-      )}
+      )} */}
 
-      <div className="grid  grid-cols-5 gap-2 bg-gray-400 p-2 rounded-2xl">
+      <div className="grid  grid-cols-4 gap-2 bg-gray-400 p-2 rounded-2xl">
         {todos.map((todo, index) => (
           <div
             key={todo.id}
-            className="flex flex-col items-center bg-gray-100 gap-2 w-60 justify-center p-2 border-amber-300 border  rounded-xl"
+            className="flex flex-col items-center bg-gray-100 gap-2 w-80 justify-center p-2 border-amber-300 border  rounded-xl"
           >
             <span>Id:{todo.id}</span>
             <span>{todo.title}</span>
@@ -125,13 +126,23 @@ const page = () => {
               Updated: {todo.updated_at}
 
             </span>
-            <button className="rounded font-semibold bg-red-300 hover:bg-red-700 transition-colors hover:rotate-180 duration-300 h-10 w-20 cursor-pointer"
-              onClick={() => handleDelete(todo.id)}
-            >
-              DELETE
-            </button>
 
+            <div className="flex gap-2">
+              <button className="font-semibold bg-red-300 hover:bg-red-700 transition-colors duration-300 h-10 w-20 rounded cursor-pointer"
+                onClick={() => handleDelete(todo.id)}
+              >
+                Edit
+              </button>
+
+              <button className="font-semibold bg-red-300 hover:bg-red-700 transition-colors hover:rotate-180 duration-300 h-10 w-20 rounded-full cursor-pointer"
+                onClick={() => handleDelete(todo.id)}
+              >
+                DELETE
+              </button>
+
+            </div>
           </div>
+
 
         ))}
       </div>
