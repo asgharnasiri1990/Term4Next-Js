@@ -37,7 +37,7 @@ const page = () => {
 
             <button
                 onClick={handleClick}
-                className='bg-blue-600 w-25 text-white rounded-xl p-1 border text-xl cursor-pointer'>submit</button>
+                className='bg-blue-600 w-25 text-white rounded-xl p-1 border text-xl cursor-pointer'>Sign Up</button>
         </div>
     )
 }
