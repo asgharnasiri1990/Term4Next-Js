@@ -107,7 +107,7 @@ const page = () => {
         </div>
       )} */}
 
-      <div className="grid  grid-cols-4 gap-2 bg-gray-900 p-2 rounded-2xl">
+      <div className="grid  grid-cols-2 md:grid-cols-4 gap-2 bg-gray-900 p-2 rounded-2xl">
         {todos.map((todo, index) => (
           <div
             key={todo.id}
