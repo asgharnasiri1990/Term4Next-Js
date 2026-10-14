@@ -3,9 +3,10 @@ import React, { useState } from 'react'
 
 const page = () => {
     const [username, setUsername] = useState<string>("")
-    const [password, setPassword] = useState("")
+    const [password, setPassword] = useState<string>("")
 
-    const handleClick = () => {
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
         const data = {
             "username": username,
             "password": password
@@ -23,7 +24,9 @@ const page = () => {
     return (
         <div className="flex flex-col items-center p-20 gap-8 ">
             <span className='text-[#FF5C00] text-[19px]'>Fill in The Form Below To Create An Account :</span>
-            <div className="flex flex-col items-center p-10 rounded-xl gap-8 border border-[#FF5C00]">
+            <form
+            onSubmit={handleSubmit}
+            className="flex flex-col items-center p-10 rounded-xl gap-8 border border-[#FF5C00]">
 
                 <input
                     onChange={(e) => setUsername(e.target.value)}
@@ -40,9 +43,9 @@ const page = () => {
                 />
 
                 <button
-                    onClick={handleClick}
+                    type='submit'
                     className='rounded font-semibold text-[#FF5C00] bg-gray-700 hover:bg-[#FF5C00] hover:text-black transition-colors duration-300 h-10 w-25 cursor-pointer'>Register</button>
-            </div>
+            </form>
         </div>
     )
 }
