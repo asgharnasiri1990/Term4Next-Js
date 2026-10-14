@@ -83,10 +83,10 @@ const page = () => {
           value={inputData}
           onChange={(e) => setInputData(e.target.value)}
           placeholder="Enter your data"
-          className="border w-100 h-10 rounded p-2"
+          className="border border- w-100 h-10 rounded p-2"
         />
 
-        <button className="rounded font-semibold text-white/90 bg-green-400 hover:bg-green-500 transition-colors duration-300 h-10 w-20 cursor-pointer"
+        <button className="rounded font-semibold text-white/90 bg-gray-700 hover:bg-[#FF5C00] hover:text-black transition-colors duration-300 h-10 w-20 cursor-pointer"
           onClick={handleClick}
         >
           POST
@@ -107,11 +107,11 @@ const page = () => {
         </div>
       )} */}
 
-      <div className="grid  grid-cols-4 gap-2 bg-gray-400 p-2 rounded-2xl">
+      <div className="grid  grid-cols-4 gap-2 bg-gray-900 p-2 rounded-2xl">
         {todos.map((todo, index) => (
           <div
             key={todo.id}
-            className="flex flex-col items-center bg-gray-100 gap-2 w-80 justify-center p-2 border-amber-300 border  rounded-xl"
+            className="flex flex-col items-center bg-gray-800 gap-2 w-80 justify-center p-2 border-[#FF5C00] border rounded-xl"
           >
             <span>Id:{todo.id}</span>
             <span>{todo.title}</span>
@@ -128,13 +128,13 @@ const page = () => {
             </span>
 
             <div className="flex gap-2">
-              <button className="font-semibold bg-red-300 hover:bg-red-700 transition-colors duration-300 h-10 w-20 rounded cursor-pointer"
+              <button className="font-semibold bg-gray-900 hover:bg-[#FF5C00] hover:text-black transition-colors duration-300 h-10 w-20 rounded cursor-pointer"
                 onClick={() => handleDelete(todo.id)}
               >
                 Edit
               </button>
 
-              <button className="font-semibold bg-red-300 hover:bg-red-700 transition-colors hover:rotate-180 duration-300 h-10 w-20 rounded-full cursor-pointer"
+              <button className="font-semibold bg-gray-900 hover:bg-[#FF5C00] hover:text-black transition duration-300 h-10 w-20 rounded cursor-pointer"
                 onClick={() => handleDelete(todo.id)}
               >
                 DELETE
