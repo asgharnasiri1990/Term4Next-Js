@@ -11,8 +11,10 @@ const page = () => {
     id: number;
     title: string;
     completed: string;
+    name:string
+    slug:string
     created_at: string;
-    updated_at: string;
+   productCount: string;
   };
 
 
@@ -61,7 +63,7 @@ const page = () => {
 
   //   UseEffect Part
   useEffect(() => {
-    fetch("https://practice.amirm.me/todos").then(
+    fetch("https://practice.amirm.me/categories").then(
       async (data) => {
         const body = await data.json();
 
@@ -107,14 +109,15 @@ const page = () => {
         </div>
       )} */}
 
-      <div className="grid  grid-cols-2 md:grid-cols-4 gap-2 bg-gray-900 p-2 rounded-2xl">
+      <div className="grid  grid-cols-2 md:grid-cols-5 gap-2 bg-gray-900 p-2 rounded-2xl">
         {todos.map((todo, index) => (
           <div
             key={todo.id}
-            className="flex flex-col items-center bg-gray-800 gap-2 w-80 justify-center p-2 border-[#FF5C00] border rounded-xl"
+            className="flex flex-col items-center bg-gray-800 gap-2 w-50 justify-center p-2 border-[#FF5C00] border rounded-xl"
           >
             <span>Id:{todo.id}</span>
-            <span>{todo.title}</span>
+            <span>name: {todo.name}</span>
+            <span>slug:  {todo.slug}</span>
 
             <span>{todo.completed}</span>
 
@@ -123,7 +126,7 @@ const page = () => {
             </span>
             <span
               className="text-sm opacity-60">
-              Updated: {todo.updated_at}
+              productionCount: {todo.productCount}
 
             </span>
 
