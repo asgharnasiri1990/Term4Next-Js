@@ -1,26 +1,70 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 
+interface User{
+id:number
+name:string
+email:string
+}
 const page = () => {
-    const [count, setCounter] = useState(0)
+    const [users, setUsers] = useState<User[]>([])
+    const [isLoading, setIsLoading] = useState(true)
+    const [error, setError] = useState("")
 
-    useEffect (()=>{
-        console.log(count)
-    },[count])
-    
+    useEffect(() => {
+        async function getUser() {
+            try {
+                const response = await fetch("https://practice.amirm.me/categories")
+                if(!response.ok){
+                    throw new Error("REQUEST FAILED!")
+                }
+                const data = await response.json()
+                setUsers(data)
+                setIsLoading(false)
+            }
+            catch (error) {
+
+                console.log(error)
+                setIsLoading(false)
+                setError("Something went wrong")
+            }
+
+        }
+
+
+        getUser()
+    }, [])
+
+    // useEffect(() => {
+    //     fetch("https://jsonplaceholder.typicode.com/users")
+    //         .then((response) => {
+    //             if (!response.ok) { throw new Error("request failed") }
+
+    //           return response.json()
+    //         })
+
+    //         .then((data) => {
+    //             setUsers(data)
+    //             setIsLoading(false)
+    //         })
+    //         .catch((error)=>{
+    //             console.log(error)
+    //             setIsLoading(false)
+    //             setError("Something went wrong")
+    //         })
+
+    // }, [])
+
     return (
         <>
+
             <div className='flex flex-col items-center'>
-                <p>{count}</p>
+                {isLoading && <p>Loading...</p>}
+                {error && <p>{error}</p>}
 
-                <button
-                    type='button'
-                    onClick={() => setCounter((prev) => prev + 1)}
-                    className='bg-blue-400 p-2 rounded cursor-pointer'>
-                    increase
-                </button>
-
-
+                {users.map((user) => (
+                    <p key={user.id}>{user.name}</p>
+                ))}
             </div>
         </>
     )
