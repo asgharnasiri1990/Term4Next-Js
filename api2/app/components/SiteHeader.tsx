@@ -17,8 +17,7 @@ export default function SiteHeader() {
 
             <nav className="flex items-center w-full h-15 bg-black p-5 gap-3">
                 <Link href="http://localhost:3000/" className=" text-blue-500 k font-bold rounded transition p-1 hover:bg-[#FF5C00] hover:text-black">Home</Link>
-                <Link href="/signup" className="text-blue-500 rounded transition text-[16px] p-.5 hover:bg-[#FF5C00] hover:text-black">register</Link>
-                <Link href="/signin" className="text-blue-500 rounded transition text-[16px] p-.5 hover:bg-[#FF5C00] hover:text-black">sign in</Link>
+                <Link href="/signupSignin" className="text-blue-500 rounded transition text-[16px] p-.5 hover:bg-[#FF5C00] hover:text-black">sign in </Link>
                 <Link href="/todos" className="text-blue-500  rounded transition text-[16px] p-.5 hover:bg-[#FF5C00] hover:text-black">todos</Link>
                 <Link href="https://practice.amirm.me/practice/3" className="text-blue-500  rounded transition text-[16px] p-.5 hover:bg-[#FF5C00] hover:text-black">Practice3</Link>
                 <Link href="/shop" className="text-blue-500  rounded transition text-[16px] p-.5 hover:bg-[#FF5C00] hover:text-black">shop</Link>
