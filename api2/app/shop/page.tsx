@@ -60,7 +60,7 @@ const Page = () => {
                             <p className='font-bold'>{product.name}</p>
                             <p className='text-gray-400 text-sm'>{product.category.name}</p>
                             <p >{product.slug}</p>
-                            <p className='text-gray-400 text-[16px]'> {product.price.toLocaleString("en-US")} $</p>
+                            <p className='text-gray-400 text-[16px]'>تومان {product.price.toLocaleString("en-US")}</p>
 
                             {product.inStock ? <p className="text-green-500">
                                 {`Available: ${product.stock} items`}
