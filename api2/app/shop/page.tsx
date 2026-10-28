@@ -27,6 +27,7 @@ interface Product {
 const Page = () => {
 
     const [products, setProducts] = useState<Product[]>([])
+    const [search, setSearch] = useState("")
 
     useEffect(() => {
         fetch("https://practice.amirm.me/products")
@@ -43,9 +44,28 @@ const Page = () => {
 
     return (
         <>
+            {/* SEARCH PART */}
+            <div className='mb-5 bg-amber-600'>
+                <label htmlFor="product-search" className='block mb-2 bg-red-500'>Search products</label>
+                <input
+                    id="product-search"
+                    type="text"
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                    placeholder="serch by product name ..."
+                    className="border rounded-lg p-2"
+
+                />
+
+            </div>
+
+            {/* Products part */}
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 p-5">
-                {products.map((product) => (
+
+                {products.filter((product) => {
+                    return product.name.toLowerCase().includes(search.toLowerCase())
+                }).map((product) => (
                     <div key={product.id}
                         className='flex flex-col text-xl items-center shadow-md hover:bg-gray-700 transition-colors duration-800 bg-gray-800 gap-4 justify-center p-5 border-[#FF5C00] border rounded-xl cursor-pointer'>
                         <div>
